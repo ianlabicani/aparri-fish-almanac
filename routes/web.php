@@ -7,12 +7,15 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\User\FishController as UserFishController;
 // user controllers
 
+use App\Http\Controllers\Guest\FishController as GuestFishController;
+
+// guest controllers
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,4 +40,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 // user routes
 Route::prefix('user')->name('user.')->middleware(['auth', 'role:user'])->group(function () {
     Route::resource('fish', UserFishController::class)->only(['index', 'show']);
+});
+
+// guest routes
+Route::name('guest.')->group(function () {
+    Route::resource('fish', GuestFishController::class)->only(['index', 'show']);
 });
