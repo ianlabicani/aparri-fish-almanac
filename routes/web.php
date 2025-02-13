@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminFishController;
 use App\Http\Controllers\Admin\AdminUserController;
 // admin controllers
@@ -29,9 +30,7 @@ require __DIR__ . '/auth.php';
 // admin routes
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('fish', AdminFishController::class);
     Route::resource('user', AdminUserController::class);
