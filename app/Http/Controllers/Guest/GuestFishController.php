@@ -13,9 +13,9 @@ class GuestFishController extends FishController
         return parent::index($request, $view);
     }
 
-    public function show(Fish $fish)
-    {
-        return view('guest.fish.show', compact('fish'));
 
+    public function show(Request $request, $id, $view = 'guest.fish.show')
+    {
+        return parent::show($request, $id, $view);
     }
 }

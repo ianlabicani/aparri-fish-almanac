@@ -46,10 +46,9 @@ class AdminFishController extends FishController
     /**
      * Display the specified resource.
      */
-    public function show(Fish $fish)
+    public function show(Request $request, $id, $view = 'admin.fish.show')
     {
-        return view('admin.fish.show', compact('fish'));
-
+        return parent::show($request, $id, $view);
     }
 
     /**

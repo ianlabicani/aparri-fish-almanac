@@ -11,4 +11,9 @@ class UserFishController extends FishController
     {
         return parent::index($request, $view);
     }
+
+    public function show(Request $request, $id, $view = 'user.fish.show')
+    {
+        return parent::show($request, $id, $view);
+    }
 }

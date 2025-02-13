@@ -24,5 +24,11 @@ class FishController extends Controller
         return view($view, compact('fish'));
     }
 
+    public function show(Request $request, $id, $view)
+    {
+        $fish = Fish::findOrFail($id);
+        return view($view, compact('fish'));
+    }
+
 
 }

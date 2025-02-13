@@ -21,7 +21,11 @@
 
                  @auth
                      <li class="nav-item">
-                         <a href="{{ route('dashboard') }}" class="nav-link text-white">Dashboard</a>
+                         @if (auth()->user()->role == 'admin')
+                             <a href="{{ route('admin.dashboard') }}" class="nav-link text-white">Home</a>
+                         @else
+                             <a href="{{ route('user.fish.index') }}" class="nav-link text-white">Home</a>
+                         @endif
                      </li>
                      <li class="nav-item">
                          <form action="{{ route('logout') }}" method="POST" class="d-inline">
