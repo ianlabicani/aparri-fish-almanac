@@ -21,26 +21,10 @@
 
 
 <body>
-    <h1>Hello</h1>
-    <div class="top-right links">
-        @auth
-            <a href="{{ route('dashboard') }}">Dashboard</a>
-
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit">Logout</button>
-            </form>
-        @else
-            <a href="{{ route('login') }}">Login</a>
-
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-            @endif
-        @endauth
-    </div>
-
-
-
+    <main>
+        @include('admin.navbar')
+        @yield('content')
+    </main>
 </body>
 
 </html>
