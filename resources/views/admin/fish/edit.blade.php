@@ -29,6 +29,7 @@
             </div>
 
             <button type="submit" class="btn btn-success">Update Species</button>
+            <a href="{{ route('admin.fish.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 @endsection
