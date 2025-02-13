@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Manage Species</a>
+                    <a class="nav-link" href="{{ route('admin.fish.index') }}">Manage Species</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Users</a>

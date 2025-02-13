@@ -21,8 +21,8 @@
 
 
 <body>
+    @include('admin.navbar')
     <main>
-        @include('admin.navbar')
         @yield('content')
     </main>
 </body>

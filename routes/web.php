@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\FishController as AdminFishController;
+// admin controllers
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +28,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::get('dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    Route::resource('fish', AdminFishController::class);
 });
