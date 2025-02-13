@@ -25,4 +25,10 @@ class Fish extends Model
         return $this->image ? asset('storage/' . $this->image) : asset('images/img-placeholder.png');
     }
 
+
+    public function family()
+    {
+        return $this->belongsTo(FishFamily::class, 'fish_family_id');
+    }
+
 }

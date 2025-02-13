@@ -16,6 +16,9 @@
                     <a class="nav-link" href="{{ route('admin.fish.index') }}">Manage Species</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.fish-family.index') }}">Manage Fish Families</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.user.index') }}">Users</a>
                 </li>
             </ul>

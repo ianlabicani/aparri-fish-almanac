@@ -4,11 +4,35 @@
     <div class="container mt-4">
         <h2>Fish Species</h2>
         <a href="{{ route('admin.fish.create') }}" class="btn btn-primary mb-3">Add New Species</a>
+        <!-- Search & Filter Form -->
         <form method="GET" action="{{ route('admin.fish.index') }}" class="mb-4">
-            <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search fish..."
-                    value="{{ request('search') }}">
-                <button class="btn btn-primary" type="submit">Search</button>
+            <div class="row g-2">
+                <!-- Search Bar -->
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search fish..."
+                            value="{{ request('search') }}">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+
+                <!-- Fish Family Dropdown -->
+                <div class="col-md-4">
+                    <select name="fish_family_id" class="form-select" onchange="this.form.submit()">
+                        <option value="">All Families</option>
+                        @foreach ($fishFamilies as $family)
+                            <option value="{{ $family->id }}"
+                                {{ request('fish_family_id') == $family->id ? 'selected' : '' }}>
+                                {{ $family->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="col-md-2">
+                    <a href="{{ route('admin.fish.index') }}" class="btn btn-secondary w-100">Reset</a>
+                </div>
             </div>
         </form>
 

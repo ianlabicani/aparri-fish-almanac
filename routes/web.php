@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminFishController;
+use App\Http\Controllers\Admin\AdminFishFamilyController;
 use App\Http\Controllers\Admin\AdminUserController;
 // admin controllers
 
@@ -34,6 +35,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 
     Route::resource('fish', AdminFishController::class);
     Route::resource('user', AdminUserController::class);
+    Route::resource('fish-family', AdminFishFamilyController::class);
 });
 
 // user routes

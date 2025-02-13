@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Fish;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\FishFamilyFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +25,5 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Fish::factory(10)->create();
-
     }
 }
