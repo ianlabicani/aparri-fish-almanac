@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Shared\FishController;
 use App\Models\Fish;
 use Illuminate\Http\Request;
 
-class FishController extends Controller
+class AdminFishController extends FishController
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, $view = 'admin.fish.index')
     {
-        $fish = Fish::all();
-        return view('admin.fish.index', compact('fish'));
+        return parent::index($request, $view);
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -4,8 +4,18 @@
     <div class="container mt-4">
         <h2 class="mb-4">Fish Species</h2>
 
+        <!-- Search Form -->
+        <form method="GET" action="{{ route('user.fish.index') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search fish..."
+                    value="{{ request('search') }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+
+        <!-- Fish Cards -->
         <div class="row">
-            @foreach ($fish as $f)
+            @forelse ($fish as $f)
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-sm h-100">
                         <div class="card-body">
@@ -21,7 +31,14 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p class="text-muted text-center">No fish found.</p>
+            @endforelse
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center">
+            {{ $fish->links() }}
         </div>
     </div>
 @endsection

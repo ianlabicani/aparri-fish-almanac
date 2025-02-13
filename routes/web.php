@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\FishController as AdminFishController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\AdminFishController;
+use App\Http\Controllers\Admin\AdminUserController;
 // admin controllers
 
-use App\Http\Controllers\User\FishController as UserFishController;
+use App\Http\Controllers\User\UserFishController;
 // user controllers
 
-use App\Http\Controllers\Guest\FishController as GuestFishController;
+use App\Http\Controllers\Guest\GuestFishController;
 
 // guest controllers
 use App\Http\Controllers\ProfileController;

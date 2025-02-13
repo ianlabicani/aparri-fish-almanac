@@ -4,6 +4,13 @@
     <div class="container mt-4">
         <h2>Fish Species</h2>
         <a href="{{ route('admin.fish.create') }}" class="btn btn-primary mb-3">Add New Species</a>
+        <form method="GET" action="{{ route('admin.fish.index') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search fish..."
+                    value="{{ request('search') }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

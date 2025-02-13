@@ -3,6 +3,13 @@
 @section('content')
     <div class="container mt-4">
         <h2 class="mb-4">Fish Species</h2>
+        <form method="GET" action="{{ route('guest.fish.index') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search fish..."
+                    value="{{ request('search') }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
 
         <div class="row">
             @foreach ($fish as $f)
