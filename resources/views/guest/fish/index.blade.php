@@ -29,6 +29,10 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $fish->links() }}
+            </div>
+
         </div>
     </div>
 @endsection

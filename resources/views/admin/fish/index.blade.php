@@ -47,6 +47,10 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $fish->links() }}
+        </div>
+
     </div>
 
     <!-- Delete Confirmation Modal -->
