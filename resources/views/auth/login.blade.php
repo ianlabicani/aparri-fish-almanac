@@ -16,12 +16,33 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
     @endif
-</head>
+
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
 
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('images/fish.jpg') }}" alt="App Logo">
+                    </a>
+                </div>
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">{{ __('Login') }}</div>
 
@@ -61,6 +82,10 @@
                                 <a href="{{ route('password.request') }}"
                                     class="text-decoration-none">{{ __('Forgot your password?') }}</a>
                                 <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <a href="{{ route('register') }}"
+                                    class="text-decoration-none">{{ __("Don't have an account? Register") }}</a>
                             </div>
                         </form>
                     </div>

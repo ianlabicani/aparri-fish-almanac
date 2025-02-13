@@ -16,6 +16,21 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
     @endif
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
 </head>
 
 
@@ -25,6 +40,12 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
+                <div class="logo-container">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('images/fish.jpg') }}" alt="App Logo">
+                    </a>
+                </div>
+
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">{{ __('Register') }}</div>
 
