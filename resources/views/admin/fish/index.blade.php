@@ -39,11 +39,11 @@
 
                             {{-- Uncomment this for deletion purposes --}}
 
-                            {{-- <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#deleteFishModal" data-id="{{ $f->id }}"
                                 data-name="{{ $f->scientific_name }}">
                                 Delete
-                            </button> --}}
+                            </button>
                         </td>
                     </tr>
                 @endforeach
