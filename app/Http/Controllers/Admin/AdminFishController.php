@@ -36,6 +36,7 @@ class AdminFishController extends FishController
             'local_name' => 'required|string|max:255',
             'fishing_ground' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
@@ -75,7 +76,10 @@ class AdminFishController extends FishController
             'english_name' => 'required|string|max:255',
             'local_name' => 'required|string|max:255',
             'fishing_ground' => 'required|string|max:255',
+            'description' => 'nullable|string',
+
         ]);
+
 
         $fish->update($request->all());
 

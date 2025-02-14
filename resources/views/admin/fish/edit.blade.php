@@ -27,7 +27,10 @@
                 <input type="text" name="fishing_ground" class="form-control" value="{{ $fish->fishing_ground }}"
                     required>
             </div>
-
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3">{{ old('description', $fish->description ?? '') }}</textarea>
+            </div>
             <button type="submit" class="btn btn-success">Update Species</button>
             <a href="{{ route('admin.fish.index') }}" class="btn btn-secondary">Cancel</a>
         </form>

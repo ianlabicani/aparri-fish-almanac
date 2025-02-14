@@ -9,6 +9,7 @@
                 <h4 class="card-title">{{ $fish->english_name }} ({{ $fish->scientific_name }})</h4>
                 <p><strong>Local Name:</strong> {{ $fish->local_name }}</p>
                 <p><strong>Fishing Ground:</strong> {{ $fish->fishing_ground }}</p>
+                <p><strong>Description:</strong> {{ $fish->description ?? 'N/A' }}</p>
             </div>
         </div>
         <a href="{{ route('admin.fish.index') }}" class="btn btn-secondary mt-3">Back to List</a>

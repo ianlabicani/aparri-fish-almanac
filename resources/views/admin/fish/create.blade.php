@@ -28,6 +28,11 @@
                 <label class="form-label">Fishing Ground</label>
                 <input type="text" name="fishing_ground" class="form-control" required>
             </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3">{{ old('description', $fish->description ?? '') }}</textarea>
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Add Species</button>
         </form>
