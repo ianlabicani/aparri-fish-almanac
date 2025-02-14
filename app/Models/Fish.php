@@ -15,6 +15,7 @@ class Fish extends Model
         'english_name',
         'local_name',
         'fishing_ground',
+        'description',
         'image'
     ];
 
