@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Shared\FishController;
 use App\Models\Fish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminFishController extends FishController
 {
@@ -71,17 +72,23 @@ class AdminFishController extends FishController
      */
     public function update(Request $request, Fish $fish)
     {
-        $request->validate([
+        $validated = $request->validate([
             'scientific_name' => 'required|string|max:255',
             'english_name' => 'required|string|max:255',
             'local_name' => 'required|string|max:255',
             'fishing_ground' => 'required|string|max:255',
             'description' => 'nullable|string',
-
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-
-        $fish->update($request->all());
+        if ($request->hasFile('image')) {
+            if ($fish->image) {
+                Storage::delete('public/' . $fish->image); // Delete old image
+            }
+            $imagePath = $request->file('image')->store('fish_images', 'public');
+            $validated['image'] = $imagePath;
+        }
+        $fish->update($validated);
 
         return redirect()->route('admin.fish.index')->with('success', 'Fish species updated successfully.');
     }
