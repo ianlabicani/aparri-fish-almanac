@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Fish::factory(10)->create();
+        $this->call(FishFamilySeeder::class);
     }
 }
