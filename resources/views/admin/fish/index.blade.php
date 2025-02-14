@@ -37,11 +37,13 @@
                             <a href="{{ route('admin.fish.edit', $f->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             <a href="{{ route('admin.fish.show', $f->id) }}" class="btn btn-info btn-sm">View</a>
 
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            {{-- Uncomment this for deletion purposes --}}
+
+                            {{-- <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#deleteFishModal" data-id="{{ $f->id }}"
                                 data-name="{{ $f->scientific_name }}">
                                 Delete
-                            </button>
+                            </button> --}}
                         </td>
                     </tr>
                 @endforeach
