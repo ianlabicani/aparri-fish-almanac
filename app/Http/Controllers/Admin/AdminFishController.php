@@ -30,14 +30,20 @@ class AdminFishController extends FishController
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'scientific_name' => 'required|unique:fish|string|max:255',
             'english_name' => 'required|string|max:255',
             'local_name' => 'required|string|max:255',
             'fishing_ground' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        Fish::create($request->all());
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('fish_images', 'public');
+            $validated['image'] = $imagePath;
+        }
+
+        Fish::create($validated);
 
         return redirect()->route('admin.fish.index')->with('success', 'Fish species added successfully.');
 
