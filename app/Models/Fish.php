@@ -15,5 +15,13 @@ class Fish extends Model
         'english_name',
         'local_name',
         'fishing_ground',
+        'image'
     ];
+
+
+    public function getImageUrl()
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('images/default-fish.png');
+    }
+
 }
