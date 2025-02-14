@@ -61,7 +61,16 @@ After cloning the repository, follow these steps to set up the Laravel applicati
     php artisan migrate
     ```
 
-5. **Serve the Application**:
+5. **Create Storage Link**:
+   If the application stores uploaded files (e.g., images), run the following command to create a symbolic link between the `storage/app/public` directory and `public/storage`:
+
+    ```bash
+    php artisan storage:link
+    ```
+
+    This allows publicly accessible files to be served from the `storage` directory.
+
+6. **Serve the Application**:
    Start the development server:
 
     ```bash
