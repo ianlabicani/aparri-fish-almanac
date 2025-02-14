@@ -3,13 +3,22 @@
 @section('content')
     <div class="container mt-4">
         <h2>Edit Fish Species</h2>
-        <form action="{{ route('admin.fish.update', $fish->id) }}" method="POST">
+        <form action="{{ route('admin.fish.update', $fish->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-
+            <div class="mb-3">
+                <label class="form-label">Current Image:</label><br>
+                <img src="{{ $fish->image ? asset('storage/' . $fish->image) : asset('images/img-placeholder.png') }}"
+                    alt="Fish Image" class="img-thumbnail" width="150">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload New Image:</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
             <div class="mb-3">
                 <label class="form-label">Scientific Name</label>
-                <input type="text" name="scientific_name" class="form-control" value="{{ $fish->scientific_name }}" required>
+                <input type="text" name="scientific_name" class="form-control" value="{{ $fish->scientific_name }}"
+                    required>
             </div>
 
             <div class="mb-3">
