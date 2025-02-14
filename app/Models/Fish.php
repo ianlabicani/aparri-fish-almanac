@@ -21,7 +21,7 @@ class Fish extends Model
 
     public function getImageUrl()
     {
-        return $this->image ? asset('storage/' . $this->image) : asset('images/default-fish.png');
+        return $this->image ? asset('storage/' . $this->image) : asset('images/img-placeholder.png');
     }
 
 }
