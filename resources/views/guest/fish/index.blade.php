@@ -16,6 +16,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-sm h-100">
                         <div class="card-body">
+                            <img src="{{ $f->getImageUrl() }}" alt="{{ $f->english_name }}" class="img-fluid">
                             <h5 class="card-title text-primary">{{ $f->english_name }}</h5>
                             <h6 class="card-subtitle text-muted">{{ $f->scientific_name }}</h6>
                             <p class="card-text mt-2">

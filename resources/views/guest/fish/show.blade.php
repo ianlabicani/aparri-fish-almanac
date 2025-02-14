@@ -5,6 +5,7 @@
         <h2>Fish Details</h2>
         <div class="card">
             <div class="card-body">
+                <img src="{{ $fish->getImageUrl() }}" alt="{{ $fish->english_name }}" class="img-fluid">
                 <h4 class="card-title">{{ $fish->english_name }} ({{ $fish->scientific_name }})</h4>
                 <p><strong>Local Name:</strong> {{ $fish->local_name }}</p>
                 <p><strong>Fishing Ground:</strong> {{ $fish->fishing_ground }}</p>
